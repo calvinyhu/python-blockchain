@@ -79,5 +79,7 @@ class Node:
         print("Done!")
 
 
-node = Node()
-node.listen_for_input()
+# This if statement helps with execution context. If node.py is directly executed, then __name__ is equal to __main__. If node.py is imported into another file, then __name__ is equal to the filename, so we do not want to execute the code inside the if statement.
+if __name__ == "__main__":
+    node = Node()
+    node.listen_for_input()
